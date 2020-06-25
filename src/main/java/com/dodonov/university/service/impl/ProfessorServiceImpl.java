@@ -5,6 +5,7 @@ import com.dodonov.university.dto.PageDto;
 import com.dodonov.university.dto.ProfessorDto;
 import com.dodonov.university.repository.ProfessorRepository;
 import com.dodonov.university.service.ProfessorService;
+import lombok.extern.log4j.Log4j;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,7 @@ import java.util.UUID;
 
 @Service
 @Transactional
+@Log4j
 public class ProfessorServiceImpl implements ProfessorService {
     private final ProfessorRepository professorRepository;
     private final ModelMapper modelMapper;
