@@ -1,0 +1,34 @@
+server:
+  port: 8888
+spring:
+  redis:
+    password: 1234
+    host: redis
+    port: 6379
+  cache:
+    type: redis
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        jdbc:
+          lob:
+            non_contextual_creation: true
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+  main:
+    banner-mode: OFF
+  flyway:
+    enabled: on
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://db:5432/university
+    username: postgres
+    password: admin
+
+  springdoc:
+    api-docs:
+      path: /api-docs
+    swagger-ui:
+      path: /swagger-ui.html
