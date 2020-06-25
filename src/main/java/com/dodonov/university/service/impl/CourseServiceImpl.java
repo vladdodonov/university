@@ -5,6 +5,7 @@ import com.dodonov.university.dto.CourseDto;
 import com.dodonov.university.dto.PageDto;
 import com.dodonov.university.repository.CourseRepository;
 import com.dodonov.university.service.CourseService;
+import lombok.extern.log4j.Log4j;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,7 @@ import java.util.UUID;
 
 @Service
 @Transactional
+@Log4j
 public class CourseServiceImpl implements CourseService {
     private final CourseRepository courseRepository;
     private final ModelMapper modelMapper;

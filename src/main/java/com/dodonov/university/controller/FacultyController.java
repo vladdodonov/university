@@ -8,6 +8,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import lombok.extern.log4j.Log4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -29,6 +30,7 @@ import static com.dodonov.university.util.constant.PathConst.FACULTY;
 
 @RestController
 @RequestMapping(API_V1 + FACULTY)
+@Log4j
 public class FacultyController {
     private final FacultyService facultyService;
     private final ModelMapper modelMapper;

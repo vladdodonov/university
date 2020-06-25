@@ -9,6 +9,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import lombok.extern.log4j.Log4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -31,6 +32,7 @@ import static com.dodonov.university.util.constant.PathConst.PROFESSOR;
 
 @RestController
 @RequestMapping(API_V1 + PROFESSOR)
+@Log4j
 public class ProfessorController {
     private final ProfessorService professorService;
     private final ModelMapper modelMapper;

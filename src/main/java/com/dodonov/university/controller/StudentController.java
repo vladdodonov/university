@@ -1,6 +1,5 @@
 package com.dodonov.university.controller;
 
-import com.dodonov.university.dto.CourseDto;
 import com.dodonov.university.dto.ErrorDto;
 import com.dodonov.university.dto.PageDto;
 import com.dodonov.university.dto.StudentDto;
@@ -9,6 +8,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import lombok.extern.log4j.Log4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -27,11 +27,11 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.UUID;
 
 import static com.dodonov.university.util.constant.PathConst.API_V1;
-import static com.dodonov.university.util.constant.PathConst.COURSE;
 import static com.dodonov.university.util.constant.PathConst.STUDENT;
 
 @RestController
 @RequestMapping(API_V1 + STUDENT)
+@Log4j
 public class StudentController {
     private final StudentService studentService;
     private final ModelMapper modelMapper;
@@ -143,7 +143,7 @@ public class StudentController {
             }
     )
     public ResponseEntity<PageDto<StudentDto>> findAll(@RequestParam(value = "page", defaultValue = "0") int page,
-                                                      @RequestParam(value = "size", defaultValue = "100") int size) {
+                                                       @RequestParam(value = "size", defaultValue = "100") int size) {
         return ResponseEntity.status(HttpStatus.OK).body(studentService.findAll(page, size));
     }
 
